@@ -72,8 +72,9 @@ src/
 
 ## Bonus Feature
 
-● Loading states
-● Better UI polish implmeneted
+● ✅ Loading states
+
+● ✅ Better UI polish implmeneted
 
 ## Getting Started
 
