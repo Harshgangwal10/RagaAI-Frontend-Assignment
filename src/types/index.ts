@@ -28,4 +28,8 @@ export interface LoginPayload {
   password: string;
 }
 
+export interface ValidationError {
+  email?: string;
+  password?: string;
+}
 

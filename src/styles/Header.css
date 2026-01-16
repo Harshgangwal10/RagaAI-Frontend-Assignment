@@ -1,0 +1,133 @@
+.header {
+  background: var(--bg-white);
+  border-bottom: 2px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.header-content-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--text-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.user-button:hover {
+  background-color: var(--bg-light);
+  border-color: var(--primary);
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.user-email {
+  color: inherit;
+  font-weight: 600;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  background-color: var(--bg-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  min-width: 200px;
+  z-index: 2000;
+}
+
+.dropdown-label {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: block;
+}
+
+.dropdown-separator {
+  height: 1px;
+  background-color: var(--border);
+  margin: 0.5rem 0;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-light);
+  color: var(--primary);
+}
+
+.logout-item:hover {
+  background-color: #fee2e2;
+  color: var(--danger);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .header-content-content h1 {
+    font-size: 1.25rem;
+  }
+
+  .user-email {
+    display: none;
+  }
+}
+
