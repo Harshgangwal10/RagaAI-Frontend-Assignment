@@ -12,12 +12,12 @@ A React-based B2B Healthcare Admin Dashboard built with TypeScript, Redux Toolki
 - **Vite** 7.2.4
 
 - ## ScreenShot
- <img width="1906" height="912" alt="image" src="https://github.com/user-attachments/assets/aabca0b9-6597-4ac9-8399-bc3cdd1131d4" />
+<img width="1906" height="912" alt="image" src="https://github.com/user-attachments/assets/aabca0b9-6597-4ac9-8399-bc3cdd1131d4" />
 
  <img width="1915" height="912" alt="image" src="https://github.com/user-attachments/assets/3689b066-a3f6-4f09-ae04-9c78de513894" />
 
-
 ## Features Implemented
+
 - **Login Page**: Email/password authentication with form validation
 - **Home Dashboard**: Protected route with dashboard cards
 - **Authentication State**: Managed via Redux Toolkit
@@ -29,6 +29,7 @@ A React-based B2B Healthcare Admin Dashboard built with TypeScript, Redux Toolki
 - **Clean Architecture**: Proper folder structure and TypeScript types
 
 ### Project Structure
+
 ```
 src/
 ├── components/          # Reusable UI components
@@ -69,6 +70,11 @@ src/
 - ✅ `src/styles/*.css` - Component-specific styles
 - ✅ `README.md` - Project documentation
 
+## Bonus Feature
+
+● Loading states
+● Better UI polish implmeneted
+
 ## Getting Started
 
 1. **Install dependencies:**
@@ -87,4 +93,3 @@ src/
 
 - Email: `admin@healthcare.com`
 - Password: `admin123`
-
