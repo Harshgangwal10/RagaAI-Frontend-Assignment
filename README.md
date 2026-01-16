@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# RagaAI Frontend Assignment: B2B Healthcare Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based B2B Healthcare Admin Dashboard built with TypeScript, Redux Toolkit, and Radix UI.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** 19.2.0
+- **TypeScript** 5.9.3
+- **Redux Toolkit** 2.11.2
+- **Radix UI** ( Dropdown Menu)
+- **React Router DOM** 7.12.0
+- **Vite** 7.2.4
 
-## React Compiler
+## Features Implemented
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Core Requirements ✅
 
-## Expanding the ESLint configuration
+- **Login Page**: Email/password authentication with form validation
+- **Home Dashboard**: Protected route with dashboard cards
+- **Authentication State**: Managed via Redux Toolkit
+- **Dummy Credentials**: `admin@healthcare.com` / `admin123`
+- **Dashboard Stats**: Patients, Doctors, Appointments, Clinics from dummy JSON
+- **Protected Routes**: Unauthenticated users redirected to login
+- **Logout Functionality**: Clears auth state
+- **Responsive UI**: Basic responsive design
+- **Clean Architecture**: Proper folder structure and TypeScript types
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/          # Reusable UI components
+│   ├── DashboardCard.tsx
+│   ├── Header.tsx
+│   └── ProtectedRoute.tsx
+├── data/
+│   └── dummyData.ts     # Dummy credentials and dashboard data
+├── pages/
+│   ├── Home.tsx         # Dashboard page
+│   └── Login.tsx        # Login page
+├── redux/
+│   ├── hooks.ts         # Typed Redux hooks
+│   ├── store.ts         # Redux store configuration
+│   └── slices/
+│       ├── authSlice.ts     # Authentication state management
+│       └── dashboardSlice.ts # Dashboard data management
+├── styles/              # CSS stylesheets
+├── types/               # TypeScript type definitions
+└── utils/
+    └── validators.ts    # Form validation utilities
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Key Files Created/Modified
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- ✅ `src/App.tsx` - Main app with routing and Redux provider
+- ✅ `src/redux/store.ts` - Redux store with auth and dashboard slices
+- ✅ `src/redux/slices/authSlice.ts` - Authentication logic
+- ✅ `src/redux/slices/dashboardSlice.ts` - Dashboard data fetching
+- ✅ `src/pages/Login.tsx` - Login form with validation
+- ✅ `src/pages/Home.tsx` - Dashboard with stats cards
+- ✅ `src/components/Header.tsx` - App header with user info and logout
+- ✅ `src/components/DashboardCard.tsx` - Reusable stat card component
+- ✅ `src/components/ProtectedRoute.tsx` - Route protection wrapper
+- ✅ `src/types/index.ts` - TypeScript interfaces
+- ✅ `src/data/dummyData.ts` - Dummy data for auth and stats
+- ✅ `src/utils/validators.ts` - Form validation functions
+- ✅ `src/styles/*.css` - Component-specific styles
+- ✅ `README.md` - Project documentation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
+
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+2. **Run development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+## Demo Credentials
+
+- Email: `admin@healthcare.com`
+- Password: `admin123`
+
