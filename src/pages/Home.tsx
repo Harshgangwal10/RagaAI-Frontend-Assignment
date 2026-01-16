@@ -1,24 +1,34 @@
+import { useEffect } from "react";
 import Header from "../components/Header";
 import DashboardCard from "../components/DashboardCard";
 import { logout } from "../redux/slices/authSlice";
+import { fetchDashboardStats } from "../redux/slices/dashboardSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { useNavigate } from "react-router-dom";
-import { DUMMY_DASHBOARD_DATA } from "../data/dummyData";
 import "../styles/Dashboard.css";
 
 const Home = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const user = useAppSelector((state) => state.auth.user);
+  const { stats, isLoading, error } = useAppSelector((state) => state.dashboard);
 
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
   };
 
+  useEffect(() => {
+    dispatch(fetchDashboardStats());
+  }, [dispatch]);
+
   if (!user) return null;
 
-  const { patients, doctors, appointments, clinics } = DUMMY_DASHBOARD_DATA;
+  if (isLoading) return <div className="loading">Loading dashboard data...</div>;
+
+  if (error) return <div className="error">Error loading dashboard: {error}</div>;
+
+  const { patients, doctors, appointments, clinics } = stats;
 
   return (
     <div className="home-container">
